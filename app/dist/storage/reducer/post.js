@@ -6,14 +6,14 @@ import Post from '../model/post';
 export const STORE_KEY = 'post';
 
 /* action type */
-export const SAVE_POST = 'SAVE_POST';
+export const APPEND_POST = 'APPEND_POST';
 export const CLEAR_POST = 'CLEAR_POST';
 
 /* default store */
 const defaultStore: Array<Post> = [];
 
 const reducer = reducerCreator(defaultStore, {
-  [SAVE_POST]: (preState, payload) => payload,
+  [APPEND_POST]: (preState, payload) => [...preState, ...payload],
   [CLEAR_POST]: () => defaultStore
 });
 
