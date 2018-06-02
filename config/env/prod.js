@@ -9,10 +9,10 @@ const PROJECT_PORT = 80;
 const ROUTE_BASE = '/';
 
 /* 要引入的共用資源，withStyle 預設樣式 */
-const INCLUDE_ASSETS = 'css';
+const INCLUDE_ASSETS = '';
 
 /* 要打包config.js的資料夾，使用逗號區隔 */
-const BUILD_DIRECTORIES = 'containers';
+const BUILD_DIRECTORIES = 'containers,storage';
 
 /* 是否啟用 redux-devtools */
 const ENABLE_DEV_TOOLS = false;

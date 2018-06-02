@@ -5,7 +5,7 @@ import Master from '~/containers/master';
 
 render(
   router({
-    routerIndex: '/home',
+    routerIndex: '/author',
     masterComponent: Master
   }),
   document.getElementById('container')
