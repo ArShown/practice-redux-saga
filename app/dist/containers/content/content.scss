@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+}
+
+.author {
+  flex: 0 0 150px;
+}
+
+.content-container {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.content-body {
+  padding: 10px 0;
+}
+
+.content-comment {
+  margin-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
