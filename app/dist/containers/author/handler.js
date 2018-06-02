@@ -1,7 +1,7 @@
 /* @flow */
-import { STORE_KEY } from '~/storage/reducer/user';
+import { STORE_KEY } from '~/storage/reducer/author';
 import { fetchTrip } from '~/core/action/effects';
-import { fetchList, saveToStore, errorEmitter } from '~/storage/saga/user';
+import { fetchList, saveToStore, errorEmitter } from '~/storage/saga/author';
 import { compose, withStore, withDispatch } from '~/core/container';
 import { lifecycle } from 'recompose';
 

@@ -1,7 +1,7 @@
-import user from './reducer/user';
+import author from './reducer/author';
 import post from './reducer/post';
 import comment from './reducer/comment';
 
 export default {
-  reducer: [user, post, comment]
+  reducer: [author, post, comment]
 };

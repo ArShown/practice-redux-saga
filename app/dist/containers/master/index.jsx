@@ -9,15 +9,9 @@ export default handler(({ children, title, activePath }) => (
       <h1 styleName="header">{title}</h1>
       <div styleName="nav">
         <Link
-          styleName={`nav-item ${activePath === 'home' ? 'active' : ''}`}
-          to="/home">
-          HOME
-        </Link>
-        <div styleName="nav-divide" />
-        <Link
-          styleName={`nav-item ${activePath === 'profile' ? 'active' : ''}`}
-          to="/profile">
-          PROFILE
+          styleName={`nav-item ${activePath === 'author' ? 'active' : ''}`}
+          to="/author">
+          AUTHOR
         </Link>
         <div styleName="nav-divide" />
         <Link

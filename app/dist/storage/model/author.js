@@ -1,5 +1,5 @@
 /* @flow */
-export default class User {
+export default class Author {
   id: number;
   name: string;
   email: string;
