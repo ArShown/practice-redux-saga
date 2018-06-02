@@ -14,11 +14,13 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    width: 150px;
   }
   &-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #333;
+    margin-top: 10px;
   }
 }

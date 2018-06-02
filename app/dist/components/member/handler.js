@@ -1,11 +1,11 @@
 /* @flow */
 import { compose, withStyle } from '~/core/container';
-import { withProps, withState } from 'recompose';
+import { withPropsOnChange, withState } from 'recompose';
 import member from './member.scss';
 import { join } from 'ramda';
 
 export default compose(
-  withProps(() => {
+  withPropsOnChange(['name'], () => {
     const _getColorCode = () => {
       const color = () => parseInt(Math.random() * 255 + 1).toString(16);
       return join('', [color(), color(), color()]);
