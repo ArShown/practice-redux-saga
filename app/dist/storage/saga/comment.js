@@ -8,7 +8,7 @@ import Comment from '~/storage/model/comment';
 /* requests */
 export const fetchListByPostId = (postId: number) => () =>
   fetchFrom({
-    url: 'http://jsonplaceholder.typicode.com/comments?postId=' + postId
+    url: 'https://jsonplaceholder.typicode.com/comments?postId=' + postId
   });
 
 /* response */

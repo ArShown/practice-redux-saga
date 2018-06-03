@@ -8,11 +8,11 @@ import Post from '~/storage/model/post';
 /* requests */
 export const fetchListByUserId = (userId: number) => () =>
   fetchFrom({
-    url: 'http://jsonplaceholder.typicode.com/posts?userId=' + userId
+    url: 'https://jsonplaceholder.typicode.com/posts?userId=' + userId
   });
 
 export const fetchOneById = (postId: number) => () =>
-  fetchFrom({ url: 'http://jsonplaceholder.typicode.com/posts/' + postId });
+  fetchFrom({ url: 'https://jsonplaceholder.typicode.com/posts/' + postId });
 
 /* response */
 export const saveToStore = function*(res: Array<Object>): any {

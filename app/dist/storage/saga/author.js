@@ -7,10 +7,10 @@ import Author from '~/storage/model/author';
 
 /* request */
 export const fetchList = () =>
-  fetchFrom({ url: 'http://jsonplaceholder.typicode.com/users' });
+  fetchFrom({ url: 'https://jsonplaceholder.typicode.com/users' });
 
 export const fetchOneById = (userId: number) => () =>
-  fetchFrom({ url: 'http://jsonplaceholder.typicode.com/users/' + userId });
+  fetchFrom({ url: 'https://jsonplaceholder.typicode.com/users/' + userId });
 
 /* response */
 export const saveToStore = function*(res: Array<Object>): any {
