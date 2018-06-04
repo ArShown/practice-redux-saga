@@ -10,17 +10,17 @@
   }
 
   &-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     overflow: hidden;
     width: 150px;
+    height: 150px;
+    margin: 0 auto;
   }
   &-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #333;
-    margin-top: 10px;
+    margin: 10px 0 20px;
   }
 }

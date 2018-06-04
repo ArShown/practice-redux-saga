@@ -5,11 +5,11 @@ import Comment from './comment';
 import PostAuthor from './post-author';
 
 export default handler(({ storeData: post }) => (
-  <div styleName="content">
-    <div styleName="author">
+  <div className="row">
+    <div className="col s12 m4 l3">
       <PostAuthor />
     </div>
-    <div styleName="content-container">
+    <div className="col s12 m8 l9">
       <h5>
         #{post.id} {post.title}
       </h5>

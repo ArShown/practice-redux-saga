@@ -9,7 +9,7 @@ export default handler(({ storeData: user }) => (
   <div className="row">
     {map(
       item => (
-        <div key={`user-${item.id}`} className="col s3">
+        <div key={`user-${item.id}`} className="col s12 m4 l3">
           <Member name={item.name} />
         </div>
       ),
