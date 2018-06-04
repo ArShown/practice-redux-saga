@@ -1,6 +1,6 @@
 /* @flow */
-import { reducerCreator, pickFromModel } from '~/core/reducer';
-import Author from '../model/author';
+import { reducerCreator, pickFromSchema } from '~/core/reducer';
+import Author from '../schema/author';
 import { map } from 'ramda';
 
 /* store key */
@@ -15,7 +15,7 @@ const defaultStore: Array<Author> = [];
 
 const reducer = reducerCreator(defaultStore, {
   [SAVE_AUTHOR]: (preState, payload: Array<Object>) =>
-    map(pickFromModel(Author), payload),
+    map(pickFromSchema(Author), payload),
   [CLEAR_AUTHOR]: () => defaultStore
 });
 

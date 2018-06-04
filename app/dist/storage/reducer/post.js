@@ -1,6 +1,6 @@
 /* @flow */
-import { reducerCreator, pickFromModel } from '~/core/reducer';
-import Post from '../model/post';
+import { reducerCreator, pickFromSchema } from '~/core/reducer';
+import Post from '../schema/post';
 import { map } from 'ramda';
 
 /* store key */
@@ -16,7 +16,7 @@ const defaultStore: Array<Post> = [];
 const reducer = reducerCreator(defaultStore, {
   [APPEND_POST]: (preState, payload: Array<Object>) => [
     ...preState,
-    ...map(pickFromModel(Post), payload)
+    ...map(pickFromSchema(Post), payload)
   ],
   [CLEAR_POST]: () => defaultStore
 });
