@@ -1,9 +1,9 @@
 /* @flow */
 import { put } from 'redux-saga/effects';
 import { emit } from '~/core/action/effects';
-import { fetchFrom, pickFromModel } from '~/core/helpers';
+import { fetchFrom } from '~/core/helpers';
+import { is } from 'ramda';
 import { SAVE_AUTHOR, CLEAR_AUTHOR } from '~/storage/reducer/author';
-import Author from '~/storage/model/author';
 
 /* request */
 export const fetchList = () =>
@@ -13,8 +13,8 @@ export const fetchOneById = (userId: number) => () =>
   fetchFrom({ url: 'https://jsonplaceholder.typicode.com/users/' + userId });
 
 /* response */
-export const saveToStore = function*(res: Array<Object>): any {
-  yield put(emit(SAVE_AUTHOR, pickFromModel(Author)(res)));
+export const saveToStore = function*(res: Array<Object> | Object): any {
+  yield put(emit(SAVE_AUTHOR, is(Array, res) ? res : [res]));
 };
 
 /* error */

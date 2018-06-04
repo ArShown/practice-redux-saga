@@ -1,6 +1,7 @@
 /* @flow */
-import { reducerCreator } from '~/core/reducer';
+import { reducerCreator, pickFromModel } from '~/core/reducer';
 import Comment from '../model/comment';
+import { map } from 'ramda';
 
 /* store key */
 export const STORE_KEY = 'comment';
@@ -13,7 +14,8 @@ export const CLEAR_COMMENT = 'CLEAR_COMMENT';
 const defaultStore: Array<Comment> = [];
 
 const reducer = reducerCreator(defaultStore, {
-  [SAVE_COMMENT]: (preState, payload) => payload,
+  [SAVE_COMMENT]: (preState, payload: Array<Object>) =>
+    map(pickFromModel(Comment), payload),
   [CLEAR_COMMENT]: () => defaultStore
 });
 

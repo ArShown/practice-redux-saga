@@ -15,19 +15,15 @@ import {
   saveToStore as saveToAuthor
 } from '~/storage/saga/author';
 
-const transferAuthorFormat = function*(res: Object): any {
-  yield call(saveToAuthor, [res]);
-};
-
 /* 在 saveToPost 之前要做的事 */
 const callback = function*(res: Object): any {
   /* 收到 post object，做關聯查詢 */
   yield put([
     fetchTrip(fetchCommentsByPostId(res.id), saveToComment),
-    fetchTrip(fetchAuthorById(res.userId), transferAuthorFormat)
+    fetchTrip(fetchAuthorById(res.userId), saveToAuthor)
   ]);
   /* 資料儲存需為陣列格式 */
-  yield call(saveToPost, [res]);
+  yield call(saveToPost, res);
 };
 
 export default (id: number) => fetchTrip(fetchPostById(id), callback);

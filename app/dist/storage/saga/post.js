@@ -1,9 +1,9 @@
 /* @flow */
 import { put } from 'redux-saga/effects';
 import { emit } from '~/core/action/effects';
-import { fetchFrom, pickFromModel } from '~/core/helpers';
+import { fetchFrom } from '~/core/helpers';
+import { is } from 'ramda';
 import { APPEND_POST, CLEAR_POST } from '~/storage/reducer/post';
-import Post from '~/storage/model/post';
 
 /* requests */
 export const fetchListByUserId = (userId: number) => () =>
@@ -16,7 +16,7 @@ export const fetchOneById = (postId: number) => () =>
 
 /* response */
 export const saveToStore = function*(res: Array<Object>): any {
-  yield put(emit(APPEND_POST, pickFromModel(Post)(res)));
+  yield put(emit(APPEND_POST, is(Array, res) ? res : [res]));
 };
 
 /* error */
