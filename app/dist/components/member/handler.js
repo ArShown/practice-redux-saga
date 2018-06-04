@@ -5,7 +5,7 @@ import member from './member.scss';
 import { join } from 'ramda';
 
 export default branch(
-  ({ name }) => !!name,
+  ({ name }) => !name,
   renderNothing,
   compose(
     withPropsOnChange(['name'], () => {
